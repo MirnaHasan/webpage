@@ -21,13 +21,6 @@ class _MusicState extends State<Music> {
     player = AudioPlayer();
 
     player.setReleaseMode(ReleaseMode.stop);
-
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await player.setSource(
-        AssetSource('songs/song1.mp3'),
-      );
-      await player.resume();
-    });
   }
 
   @override
@@ -72,28 +65,44 @@ class _MusicState extends State<Music> {
                   ),
                 ],
               )),
-          body: Column(
-            children: [
-              MaterialButton(
-                color: Colors.white,
-                onPressed: () async {
-                  await player.setSource(
-                    AssetSource('songs/song1.mp3'),
-                  );
-                },
-                child: const Text("my music "),
-              ),
-              MaterialButton(
-                color: Colors.white,
-                onPressed: () async {
-                  // await player.setSource(
-                  //   AssetSource('songs/song1.mp3'),
-                  // );
-                  await player.pause();
-                },
-                child: const Text("Stop "),
-              ),
-            ],
+          body: Center(
+            child: Column(
+              children: [
+                MaterialButton(
+                  color: Colors.white,
+                  onPressed: () async {
+                    WidgetsBinding.instance.addPostFrameCallback((_) async {
+                      await player.setSource(
+                        AssetSource('songs/song1.mp3'),
+                      );
+                      await player.resume();
+                    });
+                  },
+                  child: const Text("my music "),
+                ),
+                // MaterialButton(
+                //   color: Colors.white,
+                //   onPressed: () async {
+                //     await player.resume();
+                //   },
+                //   child: const Text("Resume "),
+                // ),
+                 MaterialButton(
+                  color: Colors.white,
+                  onPressed: () async {
+                    await player.pause();
+                  },
+                  child: const Text("Pause "),
+                ),
+                MaterialButton(
+                  color: Colors.white,
+                  onPressed: () async {
+                    await player.stop();
+                  },
+                  child: const Text("Stop "),
+                ),
+              ],
+            ),
           )),
     );
   }
