@@ -9,46 +9,36 @@ import 'package:audioplayers/audioplayers.dart';
 void main(){
   runApp(const Music());
 }
+
 class Music extends StatefulWidget {
-  const Music ({super.key});
+  const Music({super.key});
 
   @override
   State<Music> createState() => _MusicState();
 }
 
 class _MusicState extends State<Music> {
-   late AudioPlayer player = AudioPlayer();
-    @override
+  late AudioPlayer player = AudioPlayer();
+  @override
   void initState() {
     super.initState();
 
-   
     player = AudioPlayer();
 
- 
     player.setReleaseMode(ReleaseMode.stop);
-
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await player.setSource(AssetSource('songs/song1.mp3'),);
-      await player.resume();
-    });
   }
-   @override
+
+  @override
   void dispose() {
- 
     player.dispose();
 
     super.dispose();
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
-   
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 216, 181, 218),
         appBar: AppBar(
@@ -77,7 +67,6 @@ class _MusicState extends State<Music> {
             MaterialButton( color: Colors.white,
               onPressed: (){
            
-            
               
 
             }, 
