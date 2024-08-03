@@ -72,6 +72,7 @@ class _MusicState extends State<Music> {
               )),
           body: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 MaterialButton(
                   color: Colors.white,
