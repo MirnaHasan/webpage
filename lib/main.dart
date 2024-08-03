@@ -69,16 +69,16 @@ class _MusicState extends State<Music> {
             child: Column(
               children: [
                 MaterialButton(
-                  color: Colors.white,
+                  color: const Color.fromARGB(255, 203, 95, 95),
                   onPressed: () async {
                     WidgetsBinding.instance.addPostFrameCallback((_) async {
                       await player.setSource(
-                        AssetSource('songs/song1.mp3'),
+                        AssetSource('songs/song2.mp3'),
                       );
                       await player.resume();
                     });
                   },
-                  child: const Text("my music "),
+                  child: const Text("Play Song 1"),
                 ),
                 // MaterialButton(
                 //   color: Colors.white,
