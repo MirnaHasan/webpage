@@ -68,7 +68,14 @@ flutter:
     - assets/songs/song2.mp3
     - assets/songs/song3.mp3
     - assets/songs/song4.mp3
-    # - assets/songs/song1.mp3
+    - assets/songs/song5.mp3
+    - assets/songs/song6.mp3
+    - assets/songs/song7.mp3
+    - assets/songs/song8.mp3
+    - assets/songs/song9.mp3
+    - assets/songs/song10.mp3
+    - assets/songs/song11.mp3
+    
     # - assets/songs/song1.mp3
     # - assets/songs/song1.mp3
     # - assets/songs/song1.mp3

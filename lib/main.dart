@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-
-
-
-
-
-void main(){
+void main() {
   runApp(const Music());
 }
 
@@ -37,9 +32,26 @@ class _MusicState extends State<Music> {
 
   @override
   Widget build(BuildContext context) {
+    void playmusic(int musicNumber ) {
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        await player.setSource(
+          AssetSource('songs/song$musicNumber.mp3'),
+        );
+        await player.resume();
+      });
+    }
+
+    void pause() async {
+      await player.pause();
+    }
+
+    void stop() async {
+      await player.stop();
+    }
+
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
           backgroundColor: const Color.fromARGB(255, 216, 181, 218),
           appBar: AppBar(
               backgroundColor: const Color.fromARGB(255, 191, 182, 193),
@@ -71,45 +83,320 @@ class _MusicState extends State<Music> {
                 ],
               )),
           body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: ListView(
               children: [
-                MaterialButton(
-                  color: Colors.white,
-                  onPressed: () async {
-                    WidgetsBinding.instance.addPostFrameCallback((_) async {
-                      await player.setSource(
-                        AssetSource('songs/song1.mp3'),
-                      );
-                      await player.resume();
-                    });
-                  },
-                  child: const Text("my music "),
+                const SizedBox(
+                  height: 20,
                 ),
-                // MaterialButton(
-                //   color: Colors.white,
-                //   onPressed: () async {
-                //     await player.resume();
-                //   },
-                //   child: const Text("Resume "),
-                // ),
-                 MaterialButton(
-                  color: Colors.white,
-                  onPressed: () async {
-                    await player.pause();
-                  },
-                  child: const Text("Pause "),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(1);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
                 ),
-                MaterialButton(
-                  color: Colors.white,
-                  onPressed: () async {
-                    await player.stop();
-                  },
-                  child: const Text("Stop "),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(2);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(3);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(4);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(5);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(6);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(7);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(8);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(9);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(10);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Card(
+                  child: ListTile(
+                    leading: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        playmusic(11);
+                      },
+                      child: const Text("my music "),
+                    ),
+                    title: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        pause();
+                      },
+                      child: const Text("Pause "),
+                    ),
+                    trailing: MaterialButton(
+                      color: Colors.white,
+                      onPressed: () async {
+                        stop();
+                      },
+                      child: const Text("Stop "),
+                    ),
+                  ),
                 ),
               ],
             ),
-          )),
-    );
+          ),
+        ));
   }
 }
